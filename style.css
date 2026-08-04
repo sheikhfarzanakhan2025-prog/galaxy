@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #030308;
+}
+
+/* Canvas Positioning */
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 1;
+}
+
+/* UI Overlay */
+.ui-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+    color: #ffffff;
+    pointer-events: none; /* যাতে ক্যানভাসে মাউস ড্র্যাগ করা যায় */
+}
+
+.ui-container h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #ff7b00, #ff0055, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.ui-container p {
+    font-size: 0.9rem;
+    color: #a0a0b0;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+/* Control Buttons */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    pointer-events: auto; /* বাটনে ক্লিক করার সুবিধা দেওয়ার জন্য */
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
